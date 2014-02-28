@@ -3,6 +3,7 @@ EMACSFLAGS =
 CASK = cask
 VAGRANT = vagrant
 SPHINX-BUILD = sphinx-build
+SPHINXFLAGS =
 INSTALL-INFO = install-info
 INSTALL = install
 VERSION := $(shell EMACS=$(EMACS) $(CASK) version)
@@ -58,10 +59,10 @@ vagrant-test :
 doc : info html
 
 html :
-	$(SPHINX-BUILD) -b html -n -d doc/_build/doctrees doc doc/_build/html
+	$(SPHINX-BUILD) $(SPHINXFLAGS) -b html -n -d doc/_build/doctrees doc doc/_build/html
 
 linkcheck :
-	$(SPHINX-BUILD) -b linkcheck -n -d doc/_build/doctrees doc doc/_build/linkcheck
+	$(SPHINX-BUILD) $(SPHINXFLAGS) -b linkcheck -n -d doc/_build/doctrees doc doc/_build/linkcheck
 
 info : doc/dir
 
@@ -95,4 +96,4 @@ doc/flycheck.texi : doc/_build/info/flycheck.texi
 	cp -f $< $@
 
 doc/_build/info/flycheck.texi :
-	$(SPHINX-BUILD) -b texinfo -n -d doc/_build/doctrees doc doc/_build/info
+	$(SPHINX-BUILD) $(SPHINXFLAGS) -b texinfo -n -d doc/_build/doctrees doc doc/_build/info

@@ -473,8 +473,8 @@ Errors and warnings from a syntax checker are
   :option:`flycheck-highlighting-mode`
 
 .. face:: flycheck-error
-             flycheck-warning
-             flycheck-info
+          flycheck-warning
+          flycheck-info
 
    The faces to use to highlight errors, warnings and info messages
    respectively.
@@ -517,8 +517,8 @@ Errors and warnings from a syntax checker are
       :option:`flycheck-indication-mode`.
 
 .. face:: flycheck-fringe-error
-             flycheck-fringe-warning
-             flycheck-fringe-info
+          flycheck-fringe-warning
+          flycheck-fringe-info
 
    The faces of fringe indicators for errors, warnings and info messages
    respectively.
@@ -593,12 +593,10 @@ with :face:`flycheck-error-list-highlight-at-point` and
 :face:`flycheck-error-list-highlight` respectively.
 
 .. face:: flycheck-error-list-highlight-at-point
-
-   The face for highlighting the errors at point in the error list.
+   :auto:
 
 .. face:: flycheck-error-list-highlight
-
-   The face for highlighting the errors at the current line in the error list.
+   :auto:
 
 Ultimately, you can clear all reported errors at once:
 
